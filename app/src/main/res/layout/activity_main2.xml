@@ -8,10 +8,64 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/mainactivity2TextView"
+        android:layout_height="100dp"
+        android:id="@+id/mainactivity2TextView1"
         android:textSize="20dp"
         android:gravity="center"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/mainactivity2TextView1"
+        android:visibility="visible"
+        android:background="@android:color/darker_gray"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/mainactivity2TextView2"
+        android:layout_below="@+id/mainactivity2TextView1"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_margin="3dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:layout_below="@id/mainactivity2TextView2"
+        android:background="@android:color/darker_gray"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/mainactivity2TextView3"
+        android:layout_below="@+id/mainactivity2TextView2"
+        android:textSize="20dp"
+        android:layout_margin="3dp"
+        android:gravity="center"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/mainactivity2TextView3"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/mainactivity2TextView4"
+        android:layout_margin="3dp"
+        android:layout_below="@+id/mainactivity2TextView3"
+        android:textSize="20dp"
+        android:gravity="center"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:layout_below="@id/mainactivity2TextView4"
+        android:background="@android:color/darker_gray"
         />
 
 </RelativeLayout>

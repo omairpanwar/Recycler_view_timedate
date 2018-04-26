@@ -6,8 +6,7 @@ import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
 
-    private TextView textView;
-    String str;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +14,14 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Bundle bundle = getIntent().getExtras();
         DataModel dataModel = (DataModel) bundle.getSerializable("ff");
-        TextView tv = findViewById(R.id.mainactivity2TextView);
-        tv.setText(String.valueOf(dataModel.getBelowbold() + dataModel.getDatee()));
+        TextView tv1 = findViewById(R.id.mainactivity2TextView1);
+        tv1.setText(String.valueOf(dataModel.getBoldletter()));
+        TextView tv2 = findViewById(R.id.mainactivity2TextView2);
+        tv2.setText(String.valueOf(dataModel.getBelowbold()));
+        TextView tv3 = findViewById(R.id.mainactivity2TextView3);
+        tv3.setText(String.valueOf(dataModel.getDatee()));
+        TextView tv4 = findViewById(R.id.mainactivity2TextView4);
+        tv4.setText(String.valueOf(dataModel.getRightofmap()));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
