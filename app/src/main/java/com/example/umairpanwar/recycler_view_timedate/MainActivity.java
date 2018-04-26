@@ -1,18 +1,23 @@
 package com.example.umairpanwar.recycler_view_timedate;
 
+import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateFormat;
+import android.util.EventLogTags;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -95,7 +100,9 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         int position=getAdapterPosition();
                         DataModel data=dataModels[position];
-
+                         Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                        intent.putExtra("ff",data);
+                         startActivity(intent);
                     }
                 });
                 textViewbold = itemView.findViewById(R.id.mainTextView);
@@ -109,93 +116,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public class DataModel {
-        private String boldletter;
-        private String belowbold;
-        private String rightofmap;
-        private String datee = "29/7/2018";
-        Date date;
 
-        {
-            try {
-                date = new SimpleDateFormat("dd/MM/yyyy").parse(datee);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
-
-        //    private int bigimage;
-        private int mapimg;
-        private int heartimg;
-
-
-        public DataModel(String boldletter, String belowbold, String rightofmap, String datee, int bigimage, int mapimg, int heartimg) {
-            this.boldletter = boldletter;
-            this.belowbold = belowbold;
-            this.rightofmap = rightofmap;
-            this.datee = datee;
-            //     this.bigimage = bigimage;
-            this.mapimg = mapimg;
-            this.heartimg = heartimg;
-        }
-
-        public String getBoldletter() {
-
-            return boldletter;
-        }
-
-        public void setBoldletter(String boldletter) {
-            this.boldletter = boldletter;
-        }
-
-        public String getBelowbold() {
-
-            return belowbold;
-        }
-
-        public void setBelowbold(String belowbold) {
-
-            this.belowbold = belowbold;
-        }
-
-        public String getRightofmap() {
-            return rightofmap;
-        }
-
-        public void setRightofmap(String rightofmap) {
-            this.rightofmap = rightofmap;
-        }
-
-        public String getDatee() {
-            return datee;
-        }
-
-      /*  public void setDate(String date) {
-            this.datee = datee;
-        }
-
-        public int getBigimage() {
-            return bigimage;
-        }
-
-        public void setBigimage(int bigimage) {
-            this.bigimage = bigimage;
-        }*/
-
-        public int getMapimg() {
-            return mapimg;
-        }
-
-        public void setMapimg(int mapimg) {
-            this.mapimg = mapimg;
-        }
-
-        public int getHeartimg() {
-            return heartimg;
-        }
-
-        public void setHeartimg(int heartimg) {
-            this.heartimg = heartimg;
-        }
-    }
 }
